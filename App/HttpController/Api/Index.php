@@ -19,18 +19,12 @@ class Index extends Base
    {
        $conf    = new \EasySwoole\Mysqli\Config(\EasySwoole\EasySwoole\Config::getInstance()->getConf('MYSQL'));
        $client  = new \EasySwoole\Mysqli\Client($conf);
-       go(function () use ($client) {
-           //构建sql
-           $client->queryBuilder()->get('video');
-           //执行sql
-           var_dump($client->execBuilder());
-       });
-
-//        if ($data) {
-//            return $this->writeOk($data);
-//        } else {
-//            return $this->failed();
-//        }
+       $data = $client->queryBuilder()->get('video');
+        if ($data) {
+            return $this->writeOk($data);
+        } else {
+            return $this->failed();
+        }
    }
 
 }
