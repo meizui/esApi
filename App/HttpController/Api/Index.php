@@ -15,11 +15,10 @@ class Index extends Base
 
    public function getData ()
    {
-        $db = Di::getInstance()->get('MYSQL');
-        var_dump($db);
+       $conf = new \EasySwoole\Mysqli\Config(\EasySwoole\EasySwoole\Config::getInstance()->getConf('MYSQL'));
+       $db = new \EasySwoole\Mysqli\Mysqli($conf);
+       $data = $db->get('video');//获取一个表的数据
 
-
-        $data = $db->getOne('video','id,path');
         if ($data) {
             return $this->writeOk($data);
         } else {
