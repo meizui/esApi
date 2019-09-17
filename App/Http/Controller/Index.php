@@ -1,6 +1,6 @@
 <?php
 
-namespace App\HttpController;
+namespace App\Http\Controller;
 
 use EasySwoole\EasySwoole\Trigger;
 use EasySwoole\Http\AbstractInterface\Controller;
