@@ -16,7 +16,7 @@ class Index extends Base
    public function getData ()
    {
         $db = Di::getInstance()->get('mysql');
-        $data = $db->getOne('video');
+        $data = $db->getOne('video','id,path');
         if ($data) {
             return $this->writeOk($data);
         } else {
