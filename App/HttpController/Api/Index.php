@@ -15,7 +15,7 @@ class Index extends Base
 
    public function getData ()
    {
-       $conf = new \EasySwoole\Mysqli\Config(\EasySwoole\EasySwoole\Config::getInstance()->getConf('MYSQL'));
+       $conf = new \EasySwoole\Mysqli\Config(\EasySwoole\EasySwoole\Config::getInstance()->getConf('database.MYSQL'));
        var_dump($conf);
        $db = new \EasySwoole\Mysqli\Mysqli($conf);
        $data = $db->get('video');//获取一个表的数据
