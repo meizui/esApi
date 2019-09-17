@@ -21,7 +21,7 @@ class Index extends Base
        $client  = new \EasySwoole\Mysqli\Client($conf);
        go(function () use ($client) {
            //构建sql
-           $client->queryBuilder()->get('user_list');
+           $client->queryBuilder()->get('video');
            //执行sql
            var_dump($client->execBuilder());
        });
