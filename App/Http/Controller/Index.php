@@ -10,6 +10,8 @@ class Index extends Controller
 {
     function index()
     {
+
+        echo 123123;
         $this->writeJson(200, [], 'success');
         return '/test';
     }
