@@ -1,0 +1,20 @@
+[2019-09-17 14:23:24][DEBUG][ERROR] : [Uncaught Swoole\Exception: failed to listen server port[0.0.0.0:9501], Error: Address already in use[98] in /www/esApi/vendor/easyswoole/easyswoole/src/ServerManager.php:57
+Stack trace:
+#0 /www/esApi/vendor/easyswoole/easyswoole/src/ServerManager.php(57): Swoole\Server->__construct('0.0.0.0', 9501, 2, 1)
+#1 /www/esApi/vendor/easyswoole/easyswoole/src/Core.php(113): EasySwoole\EasySwoole\ServerManager->createSwooleServer(9501, 2, '0.0.0.0', Array, 2, 1)
+#2 /www/esApi/vendor/easyswoole/easyswoole/src/Command/DefaultCommand/Start.php(42): EasySwoole\EasySwoole\Core->createServer()
+#3 /www/esApi/vendor/easyswoole/easyswoole/src/Command/CommandContainer.php(46): EasySwoole\EasySwoole\Command\DefaultCommand\Start->exec(Array)
+#4 /www/esApi/vendor/easyswoole/easyswoole/src/Command/CommandRunner.php(50): EasySwoole\EasySwoole\Command\CommandContainer->hook('start', Array)
+#5 /www/esApi/easyswoole(24): EasySwoole\EasySwoole\Command\CommandRunner->run(Array)
+#6 {main}
+  thrown at file:/www/esApi/vendor/easyswoole/easyswoole/src/ServerManager.php line:57]
+[2019-09-17 14:24:10][DEBUG][ERROR] : [Uncaught Swoole\Exception: failed to listen server port[0.0.0.0:9501], Error: Address already in use[98] in /www/esApi/vendor/easyswoole/easyswoole/src/ServerManager.php:57
+Stack trace:
+#0 /www/esApi/vendor/easyswoole/easyswoole/src/ServerManager.php(57): Swoole\Server->__construct('0.0.0.0', 9501, 2, 1)
+#1 /www/esApi/vendor/easyswoole/easyswoole/src/Core.php(113): EasySwoole\EasySwoole\ServerManager->createSwooleServer(9501, 2, '0.0.0.0', Array, 2, 1)
+#2 /www/esApi/vendor/easyswoole/easyswoole/src/Command/DefaultCommand/Start.php(42): EasySwoole\EasySwoole\Core->createServer()
+#3 /www/esApi/vendor/easyswoole/easyswoole/src/Command/CommandContainer.php(46): EasySwoole\EasySwoole\Command\DefaultCommand\Start->exec(Array)
+#4 /www/esApi/vendor/easyswoole/easyswoole/src/Command/CommandRunner.php(50): EasySwoole\EasySwoole\Command\CommandContainer->hook('start', Array)
+#5 /www/esApi/easyswoole(24): EasySwoole\EasySwoole\Command\CommandRunner->run(Array)
+#6 {main}
+  thrown at file:/www/esApi/vendor/easyswoole/easyswoole/src/ServerManager.php line:57]
