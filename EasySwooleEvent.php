@@ -30,9 +30,9 @@ class EasySwooleEvent implements Event
 
         Di::getInstance()->set('MYSQL',\MysqliDb::class,array(
             'host'=>'127.0.01',
-            'db'=>'syt',
+            'db'=>'test',
             'username'=>'root',
-            'password'=>'123456',
+            'password'=>'root1122',
             'port'=>'3306',
         ));
     }
