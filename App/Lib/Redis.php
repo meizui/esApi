@@ -30,6 +30,10 @@ class Redis
 
     public function get ($key)
     {
-        return $this->redis->get($key);
+        if (empty($key)) {
+            return  '';
+        }
+        $result = $this->redis->get($key);
+        return $result;
     }
 }
