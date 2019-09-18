@@ -2,6 +2,7 @@
 
 namespace App\Process;
 
+use App\Lib\Redis;
 use EasySwoole\Component\Process\AbstractProcess;
 use Swoole\Process;
 
@@ -18,7 +19,7 @@ class Consumer extends AbstractProcess
         $this->addTick(500,function (){
             if(!$this->isRun){
                 $this->isRun = true;
-                $redis = new \redis();//此处为伪代码，请自己建立连接或者维护redis连接
+                $redis = new redis();//此处为伪代码，请自己建立连接或者维护redis连接
                 while (true){
                     try{
                         $task = $redis->lPop('char');

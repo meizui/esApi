@@ -33,7 +33,15 @@ class Redis
         if (empty($key)) {
             return  '';
         }
-        $result = $this->redis->get($key);
-        return $result;
+        return $this->redis->get($key);
+
+    }
+
+    public function lPop ($key)
+    {
+        if (empty($key)) {
+            return '';
+        }
+        return $this->redis->lPop($key);
     }
 }
