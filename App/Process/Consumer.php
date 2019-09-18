@@ -24,7 +24,7 @@ class Consumer extends AbstractProcess
                     try{
                         $task = $redis->lPop('char');
                         if($task){
-                            var_dump($task);
+                            var_dump($this->getProcessName() . '--->'.$task);
                         }else{
                             break;
                         }
@@ -34,7 +34,7 @@ class Consumer extends AbstractProcess
                 }
                 $this->isRun = false;
             }
-            var_dump($this->getProcessName().' task run check');
+            // 写日志
         });
     }
 
