@@ -19,7 +19,9 @@ class Redis
                 throw new Exception('redis 扩展未安装!');
             }
 
-            $config = Config::getInstance()->getConf('REDIS');
+//            $config = Config::getInstance()->getConf('REDIS');
+
+            $config = \Yaconf::get('redis');
             $this->redis  = new \Redis();
             $res = $this->redis->connect($config['host'],$config['port'],$config['timeout']);
             if (!$res) {

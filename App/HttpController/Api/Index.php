@@ -8,6 +8,7 @@ use EasySwoole\Mysqli\Client;
 use App\HttpController\Api\Base;
 use EasySwoole\Component\Di;
 use App\Lib\Redis;
+use EasySwoole\EasySwoole\Config;
 
 class Index extends Base
 {
@@ -18,7 +19,7 @@ class Index extends Base
 
    public function getData ()
    {
-       $conf    = new \EasySwoole\Mysqli\Config(\EasySwoole\EasySwoole\Config::getInstance()->getConf('MYSQL'));
+       $conf    = new \EasySwoole\Mysqli\Config(Config::getInstance()->getConf('MYSQL'));
        $client  = new \EasySwoole\Mysqli\Client($conf);
        $client->queryBuilder()->get('video');
        $data =  $client->execBuilder();
