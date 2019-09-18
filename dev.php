@@ -43,4 +43,9 @@ return [
         'isSubQuery'           => false,//是否为子查询
         'max_reconnect_times ' => '3',//最大重连次数
     ],
+    'REDIS' =>[
+        'host'=> '127.0.1',
+        'port'=> 6379,
+        'timeout' => 3
+    ],
 ];

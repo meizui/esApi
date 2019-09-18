@@ -3,6 +3,7 @@
 namespace App\Lib;
 
 use EasySwoole\Component\Singleton;
+use EasySwoole\EasySwoole\Config;
 use EasySwoole\Spl\Exception\Exception;
 
 class Redis
@@ -10,19 +11,17 @@ class Redis
     use Singleton;
     protected $redis = null;
 
-    public function __construct()
+    private function __construct()
     {
         try
         {
             if (!extension_loaded('redis')) {
                 throw new Exception('redis 扩展未安装!');
             }
-            $this->redis  = new \Redis();
-            $host = '127.0.0.1';
-            $port = 6379;
-            $timeout = 5;
-            $res = $this->redis->connect($host,$port,$timeout);
 
+            $config = Config::getInstance()->getConf('REDIS');
+            $this->redis  = new \Redis();
+            $res = $this->redis->connect($config['host'],$config['port'],$config['timeout']);
             if (!$res) {
                 throw  new Exception('链接失败');
             }
