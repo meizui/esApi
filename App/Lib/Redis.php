@@ -30,4 +30,9 @@ class Redis
             throw  new Exception('服务异常');
         }
     }
+
+    public function get ($key)
+    {
+        return $this->redis->get($key);
+    }
 }

@@ -7,6 +7,7 @@ use EasySwoole\Mysqli\QueryBuilder;
 use EasySwoole\Mysqli\Client;
 use App\HttpController\Api\Base;
 use EasySwoole\Component\Di;
+use App\Lib\Redis;
 
 class Index extends Base
 {
@@ -31,9 +32,7 @@ class Index extends Base
 
    public function testReis ()
    {
-       $redis = new \Redis();
-       $redis->connect('127.0.0.1',6379,30);
-       $redis->set('qgeng',123);
+       $redis = new Redis();
        $data = $redis->get('qgeng');
        if ($data) {
            return $this->writeOk($data);
