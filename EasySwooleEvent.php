@@ -15,6 +15,7 @@ use EasySwoole\EasySwoole\Swoole\EventRegister;
 use EasySwoole\EasySwoole\AbstractInterface\Event;
 use EasySwoole\Http\Request;
 use EasySwoole\Http\Response;
+use App\Process\Consumer;
 
 class EasySwooleEvent implements Event
 {
@@ -27,7 +28,12 @@ class EasySwooleEvent implements Event
 
     public static function mainServerCreate(EventRegister $register)
     {
-        // TODO: Implement mainServerCreate() method.
+
+        $allNum = 4;
+        for ($i = 0 ;$i < $allNum;$i++){
+            ServerManager::getInstance()->getSwooleServer()->addProcess((new Consumer("consumer_{$i}"))->getProcess());
+        }
+
     }
 
     public static function onRequest(Request $request, Response $response): bool
