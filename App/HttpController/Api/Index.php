@@ -29,4 +29,16 @@ class Index extends Base
         }
    }
 
+   public function testReis ()
+   {
+       $redis = \Redis::connect('127.0.0.1',6379,30);
+       $redis->set('qgeng',123);
+       $data = $redis->get('qgeng');
+       if ($data) {
+           return $this->writeOk($data);
+       } else {
+           return $this->failed();
+       }
+   }
+
 }
