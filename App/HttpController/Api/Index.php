@@ -42,11 +42,5 @@ class Index extends Base
        }
    }
 
-   function yaconf ()
-   {
-       $data = \Yaconf::get('redis');
-
-       return $this->writeOk($data);
-   }
 
 }
