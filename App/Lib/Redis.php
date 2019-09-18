@@ -28,20 +28,12 @@ class Redis
         }
     }
 
-    public function get ($key)
+    public function __call($name, $args)
     {
-        if (empty($key)) {
-            return  '';
-        }
-        return $this->redis->get($key);
-
-    }
-
-    public function lPop ($key)
-    {
-        if (empty($key)) {
+        if (empty($name)){
             return '';
         }
-        return $this->redis->lPop($key);
+        return  $this->redis->$name(...$args);
     }
+
 }
