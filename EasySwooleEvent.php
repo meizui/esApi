@@ -10,6 +10,7 @@ namespace EasySwoole\EasySwoole;
 
 
 use App\Lib\Redis;
+use App\Process\Producer;
 use EasySwoole\Component\Di;
 use EasySwoole\EasySwoole\Swoole\EventRegister;
 use EasySwoole\EasySwoole\AbstractInterface\Event;
@@ -31,6 +32,9 @@ class EasySwooleEvent implements Event
         $allNum = 4;
         for ($i = 0 ;$i < $allNum;$i++){
             ServerManager::getInstance()->getSwooleServer()->addProcess((new Consumer("consumer_{$i}"))->getProcess());
+        }
+        for ($i = 0 ;$i < $allNum;$i++){
+            ServerManager::getInstance()->getSwooleServer()->addProcess((new Producer("Producer_{$i}"))->getProcess());
         }
 
     }
