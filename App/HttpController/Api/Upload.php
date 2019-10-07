@@ -17,12 +17,12 @@ class Upload extends Base
         var_dump($file);
 
 
-        $res = $file->moveTo('/upload/'.time().'.md');
-        if ($res) {
-            $this->message('上传成功');
-        } else {
-            $this->failed('上传失败');
-        }
+//        $res = $file->moveTo('/upload/'.time().'.md');
+//        if ($res) {
+//            $this->message('上传成功');
+//        } else {
+//            $this->failed('上传失败');
+//        }
 
     }
 
