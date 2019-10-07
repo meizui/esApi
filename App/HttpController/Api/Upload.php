@@ -16,8 +16,9 @@ class Upload extends Base
         $request = $this->request();
         $videos  = $request->getUploadedFile('file');
         print_r($videos);
+        $savePath = '/www/esApi';
 
-        $res = $videos->moveTo('/www/esApi/123.md');
+        $res = $videos->moveTo($savePath . '/' . time() . '.' . $videos->clientFileName);
         if ($res) {
             $this->message('上传成功');
         } else {
