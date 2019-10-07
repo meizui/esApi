@@ -14,21 +14,16 @@ class Upload extends Base
     {
 
         $request = $this->request();
-        $file = $request->getUploadedFile('file');
-
-//        $file = $request->getUploadedFiles('file');
-
-        print_r($file);
-        $this->writeOk($file);
+        $save_file  = $request->getUploadedFile('file');
+        $file = $request->getUploadedFiles();
 
 
-
-//        $res = $file->moveTo('/upload/123.md');
-//        if ($res) {
-//            $this->message('上传成功');
-//        } else {
-//            $this->failed('上传失败');
-//        }
+        $res = $save_file->moveTo('/upload/123.md');
+        if ($res) {
+            $this->message('上传成功');
+        } else {
+            $this->failed('上传失败');
+        }
 
     }
 
