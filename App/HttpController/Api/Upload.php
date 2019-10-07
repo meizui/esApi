@@ -16,15 +16,13 @@ class Upload extends Base
         $request = $this->request();
         $videos  = $request->getUploadedFile('file');
         print_r($videos);
-//        $file = $request->getUploadedFiles();
-//
-//
-//        $res = $save_file->moveTo('/upload/123.md');
-//        if ($res) {
-//            $this->message('上传成功');
-//        } else {
-//            $this->failed('上传失败');
-//        }
+
+        $res = $videos->moveTo('/www/esApi/public/123.md');
+        if ($res) {
+            $this->message('上传成功');
+        } else {
+            $this->failed('上传失败');
+        }
 
     }
 
