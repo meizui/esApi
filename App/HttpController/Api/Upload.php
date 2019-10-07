@@ -13,16 +13,17 @@ class Upload extends Base
     public function file ()
     {
         $request = $this->request();
-        $file = $request->getUploadedFile('file');
-        var_dump($file);
-
-
-        $res = $file->moveTo('/upload/'.time().'.md');
-        if ($res) {
-            $this->message('上传成功');
-        } else {
-            $this->failed('上传失败');
-        }
+        var_dump($request);
+//        $file = $request->getUploadedFile('file');
+//        var_dump($file);
+//
+//
+//        $res = $file->moveTo('/upload/'.time().'.md');
+//        if ($res) {
+//            $this->message('上传成功');
+//        } else {
+//            $this->failed('上传失败');
+//        }
 
     }
 
