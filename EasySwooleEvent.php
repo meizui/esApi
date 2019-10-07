@@ -29,13 +29,13 @@ class EasySwooleEvent implements Event
     public static function mainServerCreate(EventRegister $register)
     {
 
-        $allNum = 4;
-        for ($i = 0 ;$i < $allNum;$i++){
-            ServerManager::getInstance()->getSwooleServer()->addProcess((new Consumer("consumer_{$i}"))->getProcess());
-        }
-        for ($i = 0 ;$i < $allNum;$i++){
-            ServerManager::getInstance()->getSwooleServer()->addProcess((new Producer("Producer_{$i}"))->getProcess());
-        }
+//        $allNum = 4;
+//        for ($i = 0 ;$i < $allNum;$i++){
+//            ServerManager::getInstance()->getSwooleServer()->addProcess((new Consumer("consumer_{$i}"))->getProcess());
+//        }
+//        for ($i = 0 ;$i < $allNum;$i++){
+//            ServerManager::getInstance()->getSwooleServer()->addProcess((new Producer("Producer_{$i}"))->getProcess());
+//        }
 
     }
 
