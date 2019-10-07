@@ -18,7 +18,7 @@ class Upload extends Base
         print_r($videos);
         $savePath = '/www/esApi';
 
-        $res = $videos->moveTo($savePath . '/' . time() . '.' . $videos->clientFileName);
+        $res = $videos->moveTo($savePath . '/' . time() . '.' . $videos->getClientFilename());
         if ($res) {
             $this->message('上传成功');
         } else {
