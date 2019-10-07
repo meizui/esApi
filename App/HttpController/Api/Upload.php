@@ -14,8 +14,8 @@ class Upload extends Base
     {
 
         $request = $this->request();
-        $file = $request->getUploadedFile('file');
-//        $file = $request->getUploadedFiles('file');
+//        $file = $request->getUploadedFile('file');
+        $file = $request->getUploadedFiles('file');
 
         var_dump($file);
 
