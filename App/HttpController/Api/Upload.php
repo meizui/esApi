@@ -12,9 +12,13 @@ class Upload extends Base
     // 文件上传 -- 视频 图片
     public function file ()
     {
+
         $request = $this->request();
-        $file = $request->getUploadedFile('file');
+        $uploaded_file = $request->getUploadedFile('file');
+        $file = $request->getUploadedFiles();
+
         var_dump($file);
+
 
 
 //        $res = $file->moveTo('/upload/'.time().'.md');
