@@ -14,6 +14,9 @@ class Upload extends Base
     {
         $request = $this->request();
         $file = $request->getUploadedFile('file');
+        var_dump($file);
+
+
         $res = $file->moveTo('/upload/'.time().'.md');
         if ($res) {
             $this->message('上传成功');
