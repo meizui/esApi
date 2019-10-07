@@ -14,13 +14,12 @@ class Upload extends Base
     {
 
         $request = $this->request();
-        $videos  = $request->getUploadedFile('file');
-        print_r($videos);
+        $upFile  = $request->getUploadedFile('file');
         $savePath = '/www/esApi';
-
-        $res = $videos->moveTo($savePath . '/' . time() . '.' . $videos->getClientFilename());
+        $save = $savePath . '/' . time() . '.' . $upFile->getClientFilename();
+        $res = $upFile->moveTo($save);
         if ($res) {
-            $this->message('上传成功');
+            $this->writeOk(['url'=>$save]);
         } else {
             $this->failed('上传失败');
         }
