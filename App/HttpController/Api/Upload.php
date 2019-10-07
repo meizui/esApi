@@ -17,7 +17,7 @@ class Upload extends Base
         $videos  = $request->getUploadedFile('file');
         print_r($videos);
 
-        $res = $videos->moveTo('/www/esApi/public/123.md');
+        $res = $videos->moveTo('/www/esApi/123.md');
         if ($res) {
             $this->message('上传成功');
         } else {
