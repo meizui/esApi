@@ -10,9 +10,8 @@ class Base {
 
     public function __construct($request)
     {
-
         $this->request = $request;
-        $file = $this->request->getSwooleRquest()->files;
+        $file = $this->request->getSwooleRequest()->files;
         $types = array_keys($file);
         var_dump($types[0]);
     }
