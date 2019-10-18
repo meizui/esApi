@@ -9,6 +9,8 @@ class Base {
     // 上传文件的key的名称
     public $type;
 
+    public $size;
+
     public function __construct($request)
     {
         $this->request = $request;
@@ -23,6 +25,10 @@ class Base {
         if($this->type != $this->fileType) return false;
         // 检查文件大小
         $upFile = $this->request->getUploadedFile($this->type);
+        $this->size  = $upFile->getSize();
+        $this->mediaType = $upFile->getMediaType();
+
+        var_dump($this->size);
 
 
 

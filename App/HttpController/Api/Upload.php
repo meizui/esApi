@@ -17,7 +17,8 @@ class Upload extends Base
 
         $request = $this->request();
         $obj = new Video($request);
-        var_dump($obj);
+        $res = $obj->upload();
+        var_dump($res);
 
 //        $upFile  = $request->getUploadedFile('file');
 //        $savePath = '/www/esApi';
