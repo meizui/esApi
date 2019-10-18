@@ -6,19 +6,58 @@ use function PHPSTORM_META\type;
 class Base {
 
     public $request;
+    // 上传文件的key的名称
     public $type;
 
     public function __construct($request)
     {
         $this->request = $request;
-        $file = $this->request->getSwooleRequest()->files;
-        $types = array_keys($file);
-        var_dump($types[0]);
+        $files = $this->request->getSwooleRequest()->files;
+        $types = array_keys($files);
+        $this->type = $types[0];
     }
 
     public function upload ()
     {
+        // 检查文件类型
         if($this->type != $this->fileType) return false;
+        // 检查文件大小
+        $upFile = $this->request->getUploadedFile($this->type);
+
+
+
+//        $savePath = '/www/esApi';
+//        $save = $savePath . '/' . time() . '.' . $upFile->getClientFilename();
+//        $res = $upFile->moveTo($save);
+
+
+    }
+
+
+    // 检验文件大小
+    public function checkSize ()
+    {
+        if (empty($this->maxSize)) return false;
+        if  ($this->maxSize < $this->getGetMediaSize()) {
+            return false;
+        }
+    }
+
+    // 获取文件大小
+    public function getMediaSize ()
+    {
+
+    }
+
+    // 获取文件类型
+    public function getGetMediaType ()
+    {
+
+    }
+
+    public function checkFileType ()
+    {
+
     }
 
 
