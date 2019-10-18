@@ -22,6 +22,7 @@ class Base {
     {
 
         var_dump($this->type);
+        var_dump($this->fileType);
 
 
         // 检查文件类型
