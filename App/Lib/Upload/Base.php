@@ -25,8 +25,7 @@ class Base {
 
         $upFile = $this->request->getUploadedFile($this->type);
         var_dump($upFile->getSize());
-        var_dump($upFile->getMediaType());
-
+        var_dump($upFile->getClientMediaType());
 
         $savePath = '/www/esApi';
         $save = $savePath . '/' . time() . '.' . $upFile->getClientFilename();
