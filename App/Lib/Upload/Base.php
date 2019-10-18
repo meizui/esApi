@@ -21,11 +21,16 @@ class Base {
     public function upload ()
     {
 
-//
-//        // 检查文件类型
-//        if($this->type != $this->fileType) {
-//            return false;
-//        }
+
+        // 检查文件类型
+        if($this->type != $this->fileType) {
+            echo $this->type;
+            echo 1;
+            echo $this->fileType;
+
+
+            return false;
+        }
 
 
         $upFile = $this->request->getUploadedFile($this->type);
