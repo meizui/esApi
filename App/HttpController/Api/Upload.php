@@ -4,7 +4,9 @@ namespace App\HttpController\Api;
 
 namespace App\HttpController\Api;
 use App\HttpController\Api\Base;
+use App\Lib\Upload\Video;
 use EasySwoole\EasySwoole\Config;
+
 
 class Upload extends Base
 {
@@ -14,15 +16,17 @@ class Upload extends Base
     {
 
         $request = $this->request();
-        $upFile  = $request->getUploadedFile('file');
-        $savePath = '/www/esApi';
-        $save = $savePath . '/' . time() . '.' . $upFile->getClientFilename();
-        $res = $upFile->moveTo($save);
-        if ($res) {
-            $this->writeOk(['url'=>$save]);
-        } else {
-            $this->failed('上传失败');
-        }
+        $obj = new Video($request);
+
+//        $upFile  = $request->getUploadedFile('file');
+//        $savePath = '/www/esApi';
+//        $save = $savePath . '/' . time() . '.' . $upFile->getClientFilename();
+//        $res = $upFile->moveTo($save);
+//        if ($res) {
+//            $this->writeOk(['url'=>$save]);
+//        } else {
+//            $this->failed('上传失败');
+//        }
 
     }
 
