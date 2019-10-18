@@ -29,6 +29,8 @@ class Base {
         $this->mediaType = $upFile->getMediaType();
 
         var_dump($this->size);
+        var_dump($this->mediaType);
+
 
 
 
