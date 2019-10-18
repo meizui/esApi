@@ -20,21 +20,13 @@ class Base {
 
     public function upload ()
     {
-
-
         // 检查文件类型
-        if($this->fileType != $this->type) {
-            var_dump($this->type) ;
-
-            var_dump($this->fileType);
-
-
-            return false;
-        }
-
+        if($this->fileType != $this->type) return false;
 
         $upFile = $this->request->getUploadedFile($this->type);
-        var_dump($upFile);
+        var_dump($upFile->getSize());
+        var_dump($upFile->getMediaType());
+
 
         $savePath = '/www/esApi';
         $save = $savePath . '/' . time() . '.' . $upFile->getClientFilename();
