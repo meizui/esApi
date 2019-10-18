@@ -24,9 +24,11 @@ class Base {
         if($this->type != $this->fileType) return false;
         // 检查文件大小
         $upFile = $this->request->getUploadedFile($this->type);
+        var_dump($upFile);
         $savePath = '/www/esApi';
         $save = $savePath . '/' . time() . '.' . $upFile->getClientFilename();
         $res = $upFile->moveTo($save);
+
         if ($res) {
             return [
                 'path'=>$save
