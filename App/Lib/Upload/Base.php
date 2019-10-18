@@ -20,6 +20,10 @@ class Base {
 
     public function upload ()
     {
+
+        var_dump($this->type);
+
+        
         // 检查文件类型
         if($this->type != $this->fileType) return false;
         // 检查文件大小
