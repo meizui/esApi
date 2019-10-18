@@ -24,9 +24,9 @@ class Base {
 
         // 检查文件类型
         if($this->fileType != $this->type) {
-            echo $this->type;
-            echo 1;
-            echo $this->fileType;
+            var_dump($this->type) ;
+
+            var_dump($this->fileType);
 
 
             return false;
